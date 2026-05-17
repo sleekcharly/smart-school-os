@@ -7,12 +7,12 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 
-const stats = [
-  { value: '500+', label: 'Schools Onboarded' },
-  { value: '₦2B+', label: 'Fees Processed' },
-  { value: '50k+', label: 'Students Tracked' },
-  { value: '99.9%', label: 'Uptime' },
-];
+// const stats = [
+//   { value: '500+', label: 'Schools Onboarded' },
+//   { value: '₦2B+', label: 'Fees Processed' },
+//   { value: '50k+', label: 'Students Tracked' },
+//   { value: '99.9%', label: 'Uptime' },
+// ];
 
 export default function Hero() {
   return (
@@ -39,27 +39,34 @@ export default function Hero() {
             className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-sm font-medium text-white/90 mb-6"
           >
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            Built for Nigerian & African Schools
+            Built for modern schools ready to operate better
           </motion.div>
 
           <motion.h1
             variants={fadeUp}
             className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6"
           >
-            Run Your School{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300">
-              Smarter.
+            {/* Hidden from users, readable by Google */}
+            <span className="sr-only">
+              School Management Software for Nigerian Schools — Eduvia
             </span>
-            <br />
-            Not Harder
+
+            <span aria-hidden="true">
+              Finally, a{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300">
+                Simple.
+              </span>
+              <br />
+              Way To Run Your School.
+            </span>
           </motion.h1>
 
           <motion.p
             variants={fadeUp}
             className="text-lg text-white/75 leading-relaxed mb-8 max-w-lg"
           >
-            Eduvia helps you manage fees, results, attendance and communication
-            without stress.
+            Collect fees faster, manage results easily, and stop the daily
+            stress of running your school.
           </motion.p>
 
           <motion.div
@@ -85,7 +92,7 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             variants={fadeUp}
             className="flex items-center gap-6 mt-10 pt-8 border-t border-white/15"
           >
@@ -97,7 +104,7 @@ export default function Hero() {
                 <p className="text-xs text-white/55 mt-0.5">{s.label}</p>
               </div>
             ))}
-          </motion.div>
+          </motion.div> */}
         </motion.div>
 
         {/* Right - Dashboard mockup */}

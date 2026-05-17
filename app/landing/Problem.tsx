@@ -34,7 +34,7 @@ export default function Problem() {
             variants={fadeUp}
             className="font-heading font-extrabold text-3xl sm:text-4xl text-gray-900 dark:text-white"
           >
-            If your school still struggles with these...
+            Running your school shouldn’t feel like this ...
           </motion.h2>
         </motion.div>
         <motion.div

@@ -15,13 +15,13 @@ const features = [
   {
     icon: Users,
     title: 'Student Management',
-    desc: 'Enrol, track, and manage every student in one place. From admission to graduation.',
+    desc: 'Never lose track of any student again. From admission to graduation, everything stays organized in one place.',
     color: 'bg-blue-500/10 text-blue-500',
   },
   {
     icon: CreditCard,
     title: 'Fee Collection',
-    desc: 'Generate invoices, track payments, and eliminate outstanding fee confusion instantly.',
+    desc: 'Stop chasing fees. Send invoices and get payments automatically.',
     color: 'bg-green-500/10 text-green-500',
   },
   {

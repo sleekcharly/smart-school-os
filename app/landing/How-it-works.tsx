@@ -38,13 +38,13 @@ export default function HowItWorks() {
           {[
             {
               step: '01',
-              title: 'Create your school',
-              desc: 'Set up your school profile, add classes, subjects, and your session calendar in minutes.',
+              title: 'Set up your school in minutes',
+              desc: 'Create your school profile, upload documents and you’re ready to go.',
               icon: School,
             },
             {
               step: '02',
-              title: 'Enrol your students',
+              title: 'Add your students',
               desc: 'Import or manually add students with their parent contact details and class assignments.',
               icon: Users,
             },
