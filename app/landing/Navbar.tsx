@@ -35,6 +35,7 @@ export default function Navbar() {
           ) : (
             <Image
               src="/icon_only_white.png"
+              loading="eager"
               alt="Eduvia"
               className="w-9 h-9 md:w-16 md:h-16 rounded-xl"
               width={39}
@@ -81,14 +82,14 @@ export default function Navbar() {
           <Link href="/dashboard">
             <Button
               variant="ghost"
-              className={`rounded-xl text-sm font-medium ${scrolled ? '' : 'text-white hover:bg-white/15 hover:text-white'}`}
+              className={`rounded-xl text-sm font-medium cursor-pointer ${scrolled ? '' : 'text-white hover:bg-white/15 hover:text-white'}`}
             >
               Sign In
             </Button>
           </Link>
-          <Link href="/dashboard">
+          <Link href="/signup">
             <Button
-              className={`rounded-xl text-sm font-medium px-5 ${scrolled ? 'bg-[#1a3a8f] hover:bg-[#142d73] text-white' : 'bg-white text-[#1a3a8f] hover:bg-white/90'}`}
+              className={`rounded-xl text-sm font-medium px-5 cursor-pointer ${scrolled ? 'bg-[#1a3a8f] hover:bg-[#142d73] text-white' : 'bg-white text-[#1a3a8f] hover:bg-white/90'}`}
             >
               Get Started Free
             </Button>
@@ -114,7 +115,7 @@ export default function Navbar() {
               {item}
             </a>
           ))}
-          <Link href="/" className="block">
+          <Link href="/signup" className="block">
             <Button className="w-full rounded-xl mt-2 bg-[#1a3a8f] hover:bg-[#142d73] text-white">
               Get Started Free
             </Button>

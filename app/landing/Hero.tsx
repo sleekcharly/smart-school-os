@@ -73,10 +73,10 @@ export default function Hero() {
             variants={fadeUp}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Link href="/">
+            <Link href="/signup">
               <Button
                 size="lg"
-                className="rounded-xl bg-green-500 hover:bg-green-600 text-white font-semibold px-8 h-12 text-base shadow-xl shadow-green-500/30 w-full sm:w-auto"
+                className="rounded-xl bg-green-500 hover:bg-green-600 text-white font-semibold px-8 h-12 text-base shadow-xl shadow-green-500/30 w-full sm:w-auto cursor-pointer"
               >
                 Start Free Trial <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
@@ -85,7 +85,7 @@ export default function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="rounded-xl border-white/30 text-white hover:bg-white/10 h-12 text-base w-full sm:w-auto bg-transparent"
+                className="rounded-xl border-white/30 text-white hover:bg-white/10 h-12 text-base w-full sm:w-auto bg-transparent cursor-pointer"
               >
                 See How It Works <ChevronDown className="w-4 h-4 ml-2" />
               </Button>

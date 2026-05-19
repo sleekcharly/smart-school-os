@@ -6,7 +6,7 @@ import HowItWorks from './landing/How-it-works';
 import Navbar from './landing/Navbar';
 import Pricing from './landing/pricing';
 import Problem from './landing/Problem';
-import SocialProof from './landing/social-proof';
+// import SocialProof from './landing/social-proof';
 import Testimonials from './landing/testimonials';
 
 export default function Home() {
@@ -23,7 +23,7 @@ export default function Home() {
       {/* ---HOW IT WORKS--- */}
       <HowItWorks />
       {/* ----Social proof banner---- */}
-      <SocialProof />
+      {/* <SocialProof /> */}
       {/* ---Testimonials--- */}
       <Testimonials />
       {/* ---Pricing--- */}

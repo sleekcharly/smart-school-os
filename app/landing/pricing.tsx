@@ -143,9 +143,9 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
-              <Link href="/dashboard">
+              <Link href={plan.price === 'Custom' ? '/dashboard' : '/signup'}>
                 <Button
-                  className={`w-full rounded-xl h-11 font-semibold ${plan.highlight ? 'bg-white text-[#1a3a8f] hover:bg-gray-100' : 'bg-[#1a3a8f] hover:bg-[#142d73] text-white'}`}
+                  className={`w-full rounded-xl h-11 font-semibold cursor-pointer ${plan.highlight ? 'bg-white text-[#1a3a8f] hover:bg-gray-100' : 'bg-[#1a3a8f] hover:bg-[#142d73] text-white'}`}
                 >
                   {plan.price === 'Custom' ? 'Contact Sales' : 'Get Started'}
                 </Button>

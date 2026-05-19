@@ -38,10 +38,10 @@ export default function CTA() {
           variants={fadeUp}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <Link href="/dashboard">
+          <Link href="/signup">
             <Button
               size="lg"
-              className="rounded-xl bg-green-500 hover:bg-green-600 text-white font-semibold px-10 h-12 text-base shadow-xl shadow-green-500/30"
+              className="rounded-xl bg-green-500 hover:bg-green-600 text-white font-semibold px-10 h-12 text-base shadow-xl shadow-green-500/30 cursor-pointer"
             >
               Start Free Trial — No Card Needed{' '}
               <ArrowRight className="w-4 h-4 ml-2" />
@@ -51,7 +51,7 @@ export default function CTA() {
             <Button
               size="lg"
               variant="outline"
-              className="rounded-xl border-white/30 text-white hover:bg-white/10 h-13 text-base bg-transparent"
+              className="rounded-xl border-white/30 text-white hover:bg-white/10 h-13 text-base bg-transparent cursor-pointer"
             >
               Talk to Us
             </Button>
