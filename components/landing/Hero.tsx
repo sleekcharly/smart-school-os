@@ -1,4 +1,10 @@
-// components/hero.tsx
+/**
+ * @file app/landing/Hero.tsx
+ * @description Hero component for the marketing homepage.
+ * Features fluid gradients, responsive layouts, stagger animations,
+ * high-fidelity dashboard layout mockups, and structured accessible SEO tags.
+ */
+
 'use client';
 
 import { motion } from 'framer-motion';
@@ -7,33 +13,36 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 
-// const stats = [
-//   { value: '500+', label: 'Schools Onboarded' },
-//   { value: '₦2B+', label: 'Fees Processed' },
-//   { value: '50k+', label: 'Students Tracked' },
-//   { value: '99.9%', label: 'Uptime' },
-// ];
-
+/**
+ * Hero Section Component.
+ * The primary visual hook of the page. Combines striking headlines, Call-To-Action buttons,
+ * and an interactive dashboard preview panel representing active school telemetry.
+ */
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
-      {/* Background */}
+      {/* 1. Base Gradient Overlay Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0d2260] via-[#1a3a8f] to-[#0d5c3a]" />
+      {/* 2. Textured Classroom Imagery Overlay */}
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1800&q=80')] bg-cover bg-center opacity-10" />
 
-      {/* Descriptive blobs */}
+      {/* 3. Aesthetic Blurry Background Blobs */}
       <div className="absolute top-20 right-20 w-96 h-96 bg-green-500/20 rounded-full blur-3xl" />
       <div className="absolute bottom-10 left-10 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#0d2260]/60 to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-24 grid lg:grid-cols-2 gap-16 items-center">
-        {/* left */}
+        
+        {/* =========================================================================
+         * Left Column: Headline and Call-To-Actions
+         * ========================================================================= */}
         <motion.div
           initial="hidden"
           animate="visible"
           variants={stagger}
           className="text-white"
         >
+          {/* Accent Label with animated pulsing dot */}
           <motion.div
             variants={fadeUp}
             className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-sm font-medium text-white/90 mb-6"
@@ -42,11 +51,16 @@ export default function Hero() {
             Built for modern schools ready to operate better
           </motion.div>
 
+          {/* Primary Level 1 Headline (SEO and spiders optimized) */}
           <motion.h1
             variants={fadeUp}
             className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6"
           >
-            {/* Hidden from users, readable by Google */}
+            {/* 
+              Accessibility / SEO optimization:
+              `sr-only` class makes this tag fully visible to Google index bots and screen readers, 
+              while `aria-hidden="true"` hides the visually structured tag below to prevent redundant narration.
+            */}
             <span className="sr-only">
               School Management Software for Nigerian Schools — Eduvia
             </span>
@@ -69,6 +83,7 @@ export default function Hero() {
             stress of running your school.
           </motion.p>
 
+          {/* Call-to-Action Action Hooks */}
           <motion.div
             variants={fadeUp}
             className="flex flex-col sm:flex-row gap-4"
@@ -91,30 +106,20 @@ export default function Hero() {
               </Button>
             </a>
           </motion.div>
-
-          {/* <motion.div
-            variants={fadeUp}
-            className="flex items-center gap-6 mt-10 pt-8 border-t border-white/15"
-          >
-            {stats.map((s) => (
-              <div key={s.label}>
-                <p className="font-heading font-bold text-2xl text-white">
-                  {s.value}
-                </p>
-                <p className="text-xs text-white/55 mt-0.5">{s.label}</p>
-              </div>
-            ))}
-          </motion.div> */}
         </motion.div>
 
-        {/* Right - Dashboard mockup */}
+        {/* =========================================================================
+         * Right Column: Dashboard Mockup Preview
+         * ========================================================================= */}
         <motion.div
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           className="hidden lg:block"
         >
+          {/* Glassmorphic Mockup Container */}
           <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 shadow-2xl">
+            {/* Mockup Browser Header controls */}
             <div className="flex items-center gap-2 mb-5">
               <div className="w-3 h-3 rounded-full bg-red-400" />
               <div className="w-3 h-3 rounded-full bg-amber-400" />
@@ -123,7 +128,8 @@ export default function Hero() {
                 app.eduvia.io
               </div>
             </div>
-            {/* Mini stats */}
+            
+            {/* Stats Metrics Grid */}
             <div className="grid grid-cols-2 gap-3 mb-4">
               {[
                 ['👩‍🎓 Students', '1,247', '+12%'],
@@ -140,7 +146,8 @@ export default function Hero() {
                 </div>
               ))}
             </div>
-            {/* Mini fee list */}
+
+            {/* Fee payment transactions table mockup */}
             <div className="bg-white/10 rounded-2xl p-4">
               <p className="text-xs text-white/60 font-semibold uppercase tracking-wider mb-3">
                 Recent Payments
@@ -172,7 +179,9 @@ export default function Hero() {
           </div>
         </motion.div>
       </div>
+      {/* Decorative gradient transition bottom anchor */}
       <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-white dark:from-gray-950 to-transparent" />
     </section>
   );
 }
+

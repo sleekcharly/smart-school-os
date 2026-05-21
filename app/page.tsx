@@ -1,37 +1,58 @@
-import CTA from './landing/cta';
-import Features from './landing/Features';
-import Footer from './landing/footer';
-import Hero from './landing/Hero';
-import HowItWorks from './landing/How-it-works';
-import Navbar from './landing/Navbar';
-import Pricing from './landing/pricing';
-import Problem from './landing/Problem';
-// import SocialProof from './landing/social-proof';
-import Testimonials from './landing/testimonials';
+/**
+ * @file app/page.tsx
+ * @description Main marketing index page (Landing Page).
+ * Integrates all section views (Hero, Problem, Features, How it Works, Testimonials, Pricing, CTA)
+ * into a single unified page flow.
+ */
 
+import CTA from '../components/landing/cta';
+import Features from '../components/landing/Features';
+import Footer from '../components/landing/footer';
+import Hero from '../components/landing/Hero';
+import HowItWorks from '../components/landing/How-it-works';
+import Navbar from '../components/landing/Navbar';
+import Pricing from '../components/landing/pricing';
+import Problem from '../components/landing/Problem';
+// import SocialProof from './landing/social-proof';
+import Testimonials from '../components/landing/testimonials';
+
+/**
+ * Marketing Landing Page Component.
+ * Assembles modular visual panels to form the homepage layout.
+ */
 export default function Home() {
   return (
     <main className="min-h-screen text-gray-900 dark:text-gray-100 overflow-x-hidden scroll-smooth">
-      {/* ---NAV--- */}
+      {/* 1. Sticky Navigation Bar */}
       <Navbar />
-      {/* ---HERO--- */}
+
+      {/* 2. Visual Hero Panel */}
       <Hero />
-      {/* ---PROBLEM--- */}
+
+      {/* 3. Problem/Pain Point analysis section */}
       <Problem />
-      {/* ---FEATURES--- */}
+
+      {/* 4. Core product features catalog */}
       <Features />
-      {/* ---HOW IT WORKS--- */}
+
+      {/* 5. How-It-Works interactive timeline */}
       <HowItWorks />
-      {/* ----Social proof banner---- */}
+
+      {/* 6. Social proof trust indicators (commented out until active telemetry) */}
       {/* <SocialProof /> */}
-      {/* ---Testimonials--- */}
+
+      {/* 7. Client/Principal testimonials slider */}
       <Testimonials />
-      {/* ---Pricing--- */}
+
+      {/* 8. Pricing packages breakdown */}
       <Pricing />
-      {/* ---CTA--- */}
+
+      {/* 9. Final Call-to-Action conversion panel */}
       <CTA />
-      {/* ---Footer--- */}
+
+      {/* 10. Multi-column sitemap footer */}
       <Footer />
     </main>
   );
 }
+
