@@ -79,7 +79,7 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <Link href="/dashboard">
+          <Link href="/signin">
             <Button
               variant="ghost"
               className={`rounded-xl text-sm font-medium cursor-pointer ${scrolled ? '' : 'text-white hover:bg-white/15 hover:text-white'}`}
