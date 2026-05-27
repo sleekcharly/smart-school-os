@@ -5,8 +5,8 @@
  * sessions before routing or rendering proceeds.
  */
 
-// Export NextAuth's auth handler as the default export (required by Next.js 16)
-export { auth as default } from './lib/auth';
+// Export NextAuth's auth handler as the 'proxy' export (required by Next.js 16)
+export { auth as proxy } from './lib/auth';
 
 /**
  * Proxy routing matcher config.

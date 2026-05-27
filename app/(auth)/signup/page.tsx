@@ -232,7 +232,7 @@ export default function SchoolSignup() {
       if (!form.school_name.trim()) e.school_name = 'Required';
       if (!form.address.trim()) e.address = 'Required';
       if (!form.state.trim()) e.state = 'Required';
-      if (form.level.length === 0) e.level = 'Selecte at least one level';
+      if (form.level.length === 0) e.level = 'Select at least one level';
     }
 
     if (step === 2) {
@@ -312,7 +312,7 @@ export default function SchoolSignup() {
         style={{ backgroundImage: "url('/nigerian_school_class.png')" }}
       />
       {/* Dark gradient overlay - heavier at right where form lives */}
-      <div className="absolute inset-0 bg-gradient-to-r from [#0a1628]/60 via-[#0d2260]/78 to-[#0a1628]/96" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/60 via-[#0d2260]/78 to-[#0a1628]/96" />
 
       {/* Subtle color splashes */}
       <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-[#0a1628]/40 to-transparent" />
@@ -324,7 +324,7 @@ export default function SchoolSignup() {
         {/* LEFT: Branding panel */}
         <div className="hidden lg:flex flex-col justify-between flex-1 p-12 xl:p-16 max-w-xl">
           {/* Logo */}
-          <Link href="/" className="flex items-center gasp-3 group">
+          <Link href="/" className="flex items-center gap-3 group">
             <Image
               src="/icon_only_white.png"
               alt="Eduvia"
@@ -371,7 +371,7 @@ export default function SchoolSignup() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9 }}
           >
-            <div className="flex items-center gap-3 bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl px-5 py-4 max-w-xs">
+            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl px-5 py-4 max-w-xs">
               <div className="flex -space-x-2">
                 {['CO', 'EN', 'FB', 'AO'].map((init, i) => (
                   <div
@@ -504,7 +504,7 @@ export default function SchoolSignup() {
                     <select
                       value={form.state}
                       onChange={(e) => set('state', e.target.value)}
-                      className={`h-12 w-full rounded-2xl px-3 text-sm border bg-transparent text-white transition-all appearance-none cursor-pointer ${errors.state ? 'border-red-400/70 bg-red-500/10' : 'border-white/75 focus:border-green-400/60'} focus"outline-none focus:ring-0`}
+                      className={`h-12 w-full rounded-2xl px-3 text-sm border bg-transparent text-white transition-all appearance-none cursor-pointer ${errors.state ? 'border-red-400/70 bg-red-500/10' : 'border-white/75 focus:border-green-400/60'} focus:outline-none focus:ring-0`}
                       style={{ backgroundColor: '#0d1b2e' }}
                     >
                       <option
@@ -655,7 +655,7 @@ export default function SchoolSignup() {
                         className={`w-full flex items-center justify-between px-4 py-3.5 rounded-2xl border transition-all duration-200 text-left group cursor-pointer ${
                           form.plan === p.name
                             ? 'bg-green-500/15 border-green-400/60 shadow-lg shadow-green-500/10'
-                            : 'bg-white/5 border-white/10 hover:border-white/25 hover:bg-white/8'
+                            : 'bg-white/5 border-white/10 hover:border-white/25 hover:bg-white/10'
                         }`}
                       >
                         <div className="flex items-center gap-3">
