@@ -18,6 +18,46 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
+const NIGERIAN_STATES = [
+  'Abia',
+  'Adamawa',
+  'Akwa Ibom',
+  'Anambra',
+  'Bauchi',
+  'Bayelsa',
+  'Benue',
+  'Borno',
+  'Cross River',
+  'Delta',
+  'Ebonyi',
+  'Edo',
+  'Ekiti',
+  'Enugu',
+  'FCT - Abuja',
+  'Gombe',
+  'Imo',
+  'Jigawa',
+  'Kaduna',
+  'Kano',
+  'Katsina',
+  'Kebbi',
+  'Kogi',
+  'Kwara',
+  'Lagos',
+  'Nasarawa',
+  'Niger',
+  'Ogun',
+  'Ondo',
+  'Osun',
+  'Oyo',
+  'Plateau',
+  'Rivers',
+  'Sokoto',
+  'Taraba',
+  'Yobe',
+  'Zamfara',
+];
+
 /**
  * Supported academic levels for registration.
  */
@@ -34,13 +74,13 @@ const STUDENT_RANGES = ['1-100', '101-300', '301-600', '601-1000', '1000+'];
 const PLANS = [
   {
     name: 'Starter',
-    price: '₦20,000',
+    price: '₦40,000',
     desc: 'Up to 200 students',
     period: '/term',
   },
   {
     name: 'Growth',
-    price: '₦40,000',
+    price: '₦75,000',
     desc: 'Up to 800 students',
     period: '/term',
     popular: true,
@@ -449,14 +489,45 @@ export default function SchoolSignup() {
                     error={errors.address}
                     onChange={(val) => set('address', val)}
                   />
-                  <Field
+                  {/* <Field
                     label="State"
                     name="state"
                     placeholder="e.g. Lagos, Abuja, Kano…"
                     value={form.state}
                     error={errors.state}
                     onChange={(val) => set('state', val)}
-                  />
+                  /> */}
+                  <div className="space-y-1.5">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-slate-50">
+                      State
+                    </label>
+                    <select
+                      value={form.state}
+                      onChange={(e) => set('state', e.target.value)}
+                      className={`h-12 w-full rounded-2xl px-3 text-sm border bg-transparent text-white transition-all appearance-none cursor-pointer ${errors.state ? 'border-red-400/70 bg-red-500/10' : 'border-white/75 focus:border-green-400/60'} focus"outline-none focus:ring-0`}
+                      style={{ backgroundColor: '#0d1b2e' }}
+                    >
+                      <option
+                        value=""
+                        disabled
+                        style={{ backgroundColor: '#0d1b2e' }}
+                      >
+                        Select a state...
+                      </option>
+                      {NIGERIAN_STATES.map((s) => (
+                        <option
+                          key={s}
+                          value={s}
+                          style={{ backgroundColor: '#0d1b2e' }}
+                        >
+                          {s}
+                        </option>
+                      ))}
+                    </select>
+                    {errors.state && (
+                      <p className="text-red-400 text-xs">{errors.state}</p>
+                    )}
+                  </div>
                   <div className="space-y-2">
                     <label className="block text-xs font-bold uppercase tracking-wider text-slate-50">
                       School Level(s)

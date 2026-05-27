@@ -10,7 +10,7 @@ import Link from 'next/link';
 const plans = [
   {
     name: 'Starter',
-    price: '₦20,000',
+    price: '₦40,000',
     period: '/month',
     desc: 'Perfect for small schools up to 200 students',
     features: [
@@ -24,7 +24,7 @@ const plans = [
   },
   {
     name: 'Growth',
-    price: '₦40,000',
+    price: '₦75,000',
     period: '/month',
     desc: 'For growing schools that need more power',
     features: [
