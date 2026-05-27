@@ -538,7 +538,7 @@ export default function SchoolSignup() {
                           key={l}
                           type="button"
                           onClick={() => toggleLevel(l)}
-                          className={`relative py-3 px-4 rounded-2xl text-sm font-semibold border transition-all duration-200 flex items-center gap-2 ${
+                          className={`relative py-3 px-4 rounded-2xl text-sm font-semibold border transition-all duration-200 flex items-center gap-2 cursor-pointer text-white/75 ${
                             form.level.includes(l)
                               ? 'bg-green-500/20 border-green-400/60 text-green-300 shadow-lg shadow-green-500/10'
                               : 'bg-white/5 border-white/10 text-slate-400 hover:border-white/25 hover:text-white'
