@@ -1,4 +1,4 @@
-import { adminDb } from './firebase-admin';
+import { adminDb } from '../firebase-admin';
 
 export async function createAuditLog({
   schoolId,
