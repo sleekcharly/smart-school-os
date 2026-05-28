@@ -1,3 +1,4 @@
+import { CreateAuditLogParams } from '@/utils/types';
 import { adminDb } from '../firebase-admin';
 
 export async function createAuditLog({
@@ -12,7 +13,7 @@ export async function createAuditLog({
   changes,
   ipAddress,
   userAgent,
-}: any) {
+}: CreateAuditLogParams) {
   await adminDb.collection('audit_logs').add({
     schoolId,
     userId,
