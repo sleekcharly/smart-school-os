@@ -6,7 +6,7 @@
  */
 
 /**
- * Whitelist routing index for Eduvia users.
+ * Whitelist routing index for Rektora users.
  * Maps literal user roles to their corresponding authorized path sub-trees.
  */
 export const roleRoutes = {

@@ -77,7 +77,7 @@ export default function Features() {
             variants={fadeUp}
             className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto text-lg"
           >
-            No more switching between apps, spreadsheets, and WhatsApp. Eduvia
+            No more switching between apps, spreadsheets, and WhatsApp. Rektora
             brings everything under one roof.
           </motion.p>
         </motion.div>

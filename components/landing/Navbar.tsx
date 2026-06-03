@@ -23,21 +23,21 @@ export default function Navbar() {
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 dark:bg-gray-950/95 backdrop-blur-md shadow-sm border-b border-gray-100 dark:border-gray-800' : 'bg-transparet'}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 p-1">
           {scrolled ? (
             <Image
-              src="/icon_only_logo.png"
-              alt="Eduvia"
-              className="w-9 h-9 md:w-12 md:h-12 rounded-xl"
+              src="/rektora_icon_only.png"
+              alt="Rektora"
+              className="w-9 h-9 md:w-15 md:h-15 rounded-xl"
               width={39}
               height={39}
             />
           ) : (
             <Image
-              src="/icon_only_white.png"
+              src="/rektora_icon_only_white.png"
               loading="eager"
-              alt="Eduvia"
-              className="w-9 h-9 md:w-16 md:h-16 rounded-xl"
+              alt="Rektora"
+              className="w-9 h-9 md:w-12 md:h-12 rounded-xl"
               width={39}
               height={39}
             />
@@ -46,7 +46,7 @@ export default function Navbar() {
           <div
             className={`text-xl font-heading font-bold ${scrolled ? 'text-gray-900 dark:text-white' : 'text-white'}`}
           >
-            Edu<span className="text-[#10b981]">via</span>
+            Rek<span className="text-[#10b981]">tora</span>
           </div>
         </div>
         <div

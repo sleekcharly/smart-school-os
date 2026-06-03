@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -10,20 +11,25 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <Image
-                src="/icon_only_white.png"
-                alt="Eduvia"
+                src="/rektora_icon_only_white.png"
+                alt="Rektora"
                 className="w-9 h-9 md:w-16 md:h-16 rounded-xl"
                 width={39}
                 height={39}
               />
               <span className="font-heading font-bold text-xl text-white">
-                Eduvia
+                Rektora
               </span>
             </div>
             <p className="text-sm leading-relaxed text-gray-500">
               Smart school operating system for Nigerian and African schools.
             </p>
-            <p className="text-sm mt-3 text-green-500 font-medium">eduvia.io</p>
+            <Link
+              href="https://rektora.com"
+              className="text-sm mt-3 text-green-500 font-medium"
+            >
+              rektora.com
+            </Link>
           </div>
           {[
             {
@@ -60,7 +66,7 @@ export default function Footer() {
         </div>
         <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-600">
-            © 2026 Eduvia. All rights reserved.
+            © 2026 Rektora. All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-sm text-gray-600">
             <a href="#" className="hover:text-white transition-colors">

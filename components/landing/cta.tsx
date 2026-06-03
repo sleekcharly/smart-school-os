@@ -32,7 +32,7 @@ export default function CTA() {
           className="text-lg text-white/70 mb-10 max-w-2xl mx-auto"
         >
           Join hundreds of schools across Nigeria already running smarter with
-          Eduvia. Set up takes less than 10 minutes.
+          Rektora. Set up takes less than 10 minutes.
         </motion.p>
         <motion.div
           variants={fadeUp}
@@ -47,7 +47,7 @@ export default function CTA() {
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </Link>
-          <a href="mailto:hello@eduvia.io">
+          <a href="mailto:hello@rektota.com">
             <Button
               size="lg"
               variant="outline"

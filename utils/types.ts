@@ -44,17 +44,17 @@ export interface CreateAuthLogParams {
 }
 
 export interface CreateAuditLogParams {
-  schoolId: string;
-  userId: string;
+  schoolId?: string | null;
+  userId?: string | null;
   userName: string;
   role: string;
   action: string;
   entityType: string;
   entityId: string;
   description: string;
-  changes?: Record<string, unknown>;
-  ipAddress?: string;
-  userAgent?: string;
+  changes?: Record<string, unknown> | null;
+  ipAddress?: string | null;
+  userAgent?: string | null;
 }
 
 export interface CreatePaymentLogParams {
@@ -89,4 +89,13 @@ export interface CreatePaymentLogParams {
   metadata?: Record<string, unknown>;
 
   rawPayload?: Record<string, unknown>;
+}
+
+export interface ApplicationEmailProps {
+  adminName: string;
+  adminEmail?: string;
+  schoolName: string;
+  plan: string;
+  websiteUrl: string;
+  dashboardPreviewUrl: string;
 }

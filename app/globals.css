@@ -59,11 +59,11 @@
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.15 0 0);
 
-    /* 🔵 EDUVIA BLUE (Primary) */
+    /* 🔵 REKTORA BLUE (Primary) */
     --primary: oklch(0.45 0.15 260);
     --primary-foreground: oklch(0.98 0 0);
 
-    /* 🟢 EDUVIA GREEN (Secondary) */
+    /* 🟢 REKTORA GREEN (Secondary) */
     --secondary: oklch(0.7 0.16 150);
     --secondary-foreground: oklch(0.98 0 0);
 

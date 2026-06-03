@@ -62,7 +62,7 @@ export default function Hero() {
               while `aria-hidden="true"` hides the visually structured tag below to prevent redundant narration.
             */}
             <span className="sr-only">
-              School Management Software for Nigerian Schools — Eduvia
+              School Management Software for Nigerian Schools — Rektora
             </span>
 
             <span aria-hidden="true">
@@ -125,7 +125,7 @@ export default function Hero() {
               <div className="w-3 h-3 rounded-full bg-amber-400" />
               <div className="w-3 h-3 rounded-full bg-green-400" />
               <div className="ml-3 bg-white/10 rounded-lg px-3 py-1 text-xs text-white/70 font-mono">
-                app.eduvia.io
+                app.rektota.com
               </div>
             </div>
             

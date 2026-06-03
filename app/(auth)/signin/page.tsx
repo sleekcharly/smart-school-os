@@ -48,14 +48,14 @@ export default function SignInPage() {
         <div className="relative z-10">
           <Link href="/" className="flex items-center gap-3 group w-fit">
             <Image
-              src="/icon_only_white.png"
-              alt="Eduvia"
+              src="/rektora_icon_only_white.png"
+              alt="Rektora"
               width={24}
               height={24}
-              className="w-10 h-10"
+              className="w-15 h-15"
             />
             <span className="font-heading font-extrabold text-xl text-white group-hover:text-green-400 transition-colors">
-              Eduvia
+              Rektora
             </span>
           </Link>
         </div>
@@ -80,8 +80,8 @@ export default function SignInPage() {
               </span>
             </h1>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-              Sign in to your school's Eduvia dashboard - manage students, fees,
-              results, more.
+              Sign in to your school's Rektora dashboard - manage students,
+              fees, results, more.
             </p>
           </motion.div>
 
@@ -120,7 +120,7 @@ export default function SignInPage() {
             </button>
 
             <p className="text-center text-xs text-slate-600 mt-5">
-              Secure sign-in powered by Eduvia's authentication system
+              Secure sign-in powered by Rektora's authentication system
             </p>
           </motion.div>
 

@@ -15,8 +15,8 @@ export async function createAuditLog({
   userAgent,
 }: CreateAuditLogParams) {
   await adminDb.collection('audit_logs').add({
-    schoolId,
-    userId,
+    schoolId: schoolId || null,
+    userId: userId || null,
     userName,
     role,
     action,

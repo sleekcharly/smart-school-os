@@ -8,7 +8,7 @@ const testimonials = [
   {
     name: 'Mrs. Chioma Okafor',
     role: 'Head Teacher, Greenfield Academy, Lagos',
-    text: 'Eduvia completely transformed how we manage our school. Fee collection used to be a nightmare — now it takes minutes. Our parents love the portal.',
+    text: 'Rektora completely transformed how we manage our school. Fee collection used to be a nightmare — now it takes minutes. Our parents love the portal.',
     rating: 5,
     avatar: 'CO',
   },

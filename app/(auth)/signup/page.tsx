@@ -131,7 +131,7 @@ interface FormState {
  */
 const Field = ({
   label,
-  name,
+  //   name,
   type = 'text',
   placeholder,
   value,
@@ -139,7 +139,7 @@ const Field = ({
   onChange,
 }: {
   label: string;
-  name: string;
+  name?: string;
   type?: string;
   placeholder?: string;
   value: string;
@@ -169,7 +169,7 @@ const Field = ({
  * SchoolSignup Component.
  *
  * Provides a dynamic, multi-step onboarding wizard for new schools signing up
- * to the Eduvia portal. Features validation check hooks and strong TypeScript typings.
+ * to the Rektora portal. Features validation check hooks and strong TypeScript typings.
  */
 export default function SchoolSignup() {
   // Current active wizard tab index (1-based)
@@ -257,10 +257,35 @@ export default function SchoolSignup() {
 
   const submit = async () => {
     if (!validate()) return;
-    setLoading(true);
 
-    setLoading(false);
-    setDone(true);
+    try {
+      setLoading(true);
+
+      const response = await fetch('/api/auth/signup-school', {
+        method: 'POST',
+
+        headers: {
+          'Content-Type': 'application/json',
+        },
+
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Signup failed');
+      }
+
+      setDone(true);
+    } catch (error: unknown) {
+      console.error('Signup error:', error);
+      const message =
+        error instanceof Error ? error.message : 'An unexpected error occurred';
+      setErrors({ general: message });
+    } finally {
+      setLoading(false);
+    }
   };
 
   // ----SUCCESS------
@@ -271,22 +296,22 @@ export default function SchoolSignup() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/nigerian_school_class.png')" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628]/95 via-[#0d2260]/90 to-[#063d28]/92" />
+        <div className="absolute inset-0 bg-linear-to-br from-[#0a1628]/95 via-[#0d2260]/90 to-[#063d28]/92" />
         <motion.div
           initial={{ scale: 0.85, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 200, damping: 20 }}
           className="relative z-10 text-center max-w-sm"
         >
-          <div className="w-24 h-24 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center mx-auto mb-6 shadow-2xl shadow-green-500/40">
+          <div className="w-24 h-24 rounded-full bg-linear-to-br from-green-400 to-emerald-600 flex items-center justify-center mx-auto mb-6 shadow-2xl shadow-green-500/40">
             <CheckCircle2 className="w-12 h-12 text-white" />
           </div>
           <h2 className="font-heading font-extrabold text-3xl text-white mb-3">
             You&apos;re in!
           </h2>
           <p className="text-slate-100 text-sm leading-relaxed mb-8">
-            Your school application is under review. We'll activate your account
-            within 24 hours and notify{' '}
+            Your school application is under review. We&apos;ll activate your
+            account within 24 hours and notify{' '}
             <span className="text-green-400 font-semibold">
               {form.admin_email}
             </span>
@@ -312,10 +337,10 @@ export default function SchoolSignup() {
         style={{ backgroundImage: "url('/nigerian_school_class.png')" }}
       />
       {/* Dark gradient overlay - heavier at right where form lives */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/60 via-[#0d2260]/78 to-[#0a1628]/96" />
+      <div className="absolute inset-0 bg-linear-to-br from-[#0a1628]/60 via-[#0d2260]/78 to-[#0a1628]/96" />
 
       {/* Subtle color splashes */}
-      <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-[#0a1628]/40 to-transparent" />
+      <div className="absolute top-0 left-0 w-1/2 h-full bg-linear-to-br from-[#0a1628]/40 to-transparent" />
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-green-600/10 rounded-full blur-3xl" />
       <div className="absolute top-20 right-40 w-48 h-48 bg-blue-600/10 rounded-full blur-2xl" />
 
@@ -326,14 +351,14 @@ export default function SchoolSignup() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <Image
-              src="/icon_only_white.png"
-              alt="Eduvia"
+              src="/rektora_icon_only_white.png"
+              alt="Rektora"
               width={40}
               height={40}
               className="w-10 h-10 lg:w-15 lg:h-15"
             />
             <span className="font-heading font-extrabold text-2xl text-white group-hover:text-green-400 transition-colors">
-              Eduvia
+              Rektora
             </span>
           </Link>
 
@@ -352,15 +377,15 @@ export default function SchoolSignup() {
                 <br />
                 school a <br />
                 <span className="relative inline-block">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-emerald-300 to-teal-400">
+                  <span className="text-transparent bg-clip-text bg-linear-to-r from-green-400 via-emerald-300 to-teal-400">
                     digital edge.
                   </span>
-                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-green-400 to-teal-400 rounded-full opacity-50" />
+                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-linear-to-r from-green-400 to-teal-400 rounded-full opacity-50" />
                 </span>
               </h1>
               <p className="text-slate-300 text-base leading-relaxed max-w-xs">
                 Join hundreds of Nigerian schools that have replaced notebooks
-                and WhatsApp with Eduvia
+                and WhatsApp with Rektora
               </p>
             </motion.div>
           </div>
@@ -404,18 +429,18 @@ export default function SchoolSignup() {
         </div>
 
         {/* RIGHT: Form panel */}
-        <div className="w-full lg:w-[480px] xl:w-[520px] flex-shrink-0 flex flex-col justify-center p-6 lg:p-10 xl:p-12">
+        <div className="w-full lg:w-120 xl:w-130 shrink-0 flex flex-col justify-center p-6 lg:p-10 xl:p-12">
           {/* Mobile logo */}
           <Link href="/" className="flex lg:hidden items-center gap-2 mb-8">
             <Image
               src="/icon_only_white.png"
-              alt="Eduvia"
+              alt="Rektora"
               width={32}
               height={32}
               className="w-8 h-8"
             />
             <span className="font-heading font-extrabold text-xl text-white">
-              Eduvia
+              Rektora
             </span>
           </Link>
 
@@ -432,7 +457,7 @@ export default function SchoolSignup() {
           {/* Progress track */}
           <div className="mb-8">
             <div className="flex justify-between mb-2">
-              {STEPS.map((s, i) => (
+              {STEPS.map((s) => (
                 <div
                   key={s.id}
                   className="flex flex-col items-center gap-1"
@@ -454,7 +479,7 @@ export default function SchoolSignup() {
             {/* Bar */}
             <div className="relative h-1 bg-white/10 rounded-full mt-2 mx-3">
               <motion.div
-                className="absolute inset-y-0 left-0 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full"
+                className="absolute inset-y-0 left-0 bg-linear-to-br from-green-400 to-emerald-500 rounded-full"
                 animate={{ width: `${progress}%` }}
                 transition={{ duration: 0.4, ease: 'easeInOut' }}
               />
@@ -545,7 +570,7 @@ export default function SchoolSignup() {
                           }`}
                         >
                           <div
-                            className={`w-4 h-4 rounded-full border-2 flex-shrink-0 flex items-center justify-center transition-all ${
+                            className={`w-4 h-4 rounded-full border-2 shrink-0 flex items-center justify-center transition-all ${
                               form.level.includes(l)
                                 ? 'border-green-400 bg-green-400'
                                 : 'border-slate-500'
@@ -601,7 +626,7 @@ export default function SchoolSignup() {
                     onChange={(val) => set('admin_phone', val)}
                   />
                   <div className="rounded-2xl bg-blue-500/10 border border-blue-400/20 px-4 py-3 text-xs text-blue-300 leading-relaxed">
-                    💡 This email will be used to activate your Eduvia account
+                    💡 This email will be used to activate your Rektora account
                     and receive login credentials.
                   </div>
                 </motion.div>
@@ -660,7 +685,7 @@ export default function SchoolSignup() {
                       >
                         <div className="flex items-center gap-3">
                           <div
-                            className={`w-4 h-4 rounded-full border-2 flex-shrink-0 flex items-center justify-center transition-all ${
+                            className={`w-4 h-4 rounded-full border-2 shrink-0 flex items-center justify-center transition-all ${
                               form.plan === p.name
                                 ? 'border-green-400 bg-green-400'
                                 : 'border-slate-500'
@@ -728,7 +753,7 @@ export default function SchoolSignup() {
             {step < 3 ? (
               <button
                 onClick={next}
-                className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-400 hover:to-emerald-400 text-white font-bold px-8 py-3.5 rounded-2xl text-sm shadow-xl shadow-green-500/30 transition-all hover:shadow-green-500/50 hover:-translate-y-0.5 active:translate-y-0"
+                className="flex items-center gap-2 bg-linear-to-br from-green-500 to-emerald-500 hover:from-green-400 hover:to-emerald-400 text-white font-bold px-8 py-3.5 rounded-2xl text-sm shadow-xl shadow-green-500/30 transition-all hover:shadow-green-500/50 hover:-translate-y-0.5 active:translate-y-0"
               >
                 Continue <ArrowRight className="w-4 h-4" />
               </button>
@@ -736,7 +761,7 @@ export default function SchoolSignup() {
               <button
                 onClick={submit}
                 disabled={loading}
-                className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-400 hover:to-emerald-400 text-white font-bold px-8 py-3.5 rounded-2xl text-sm shadow-xl shadow-green-500/30 transition-all disabled:opacity-60 disabled:cursor-not-allowed hover:shadow-green-500/50 hover:-translate-y-0.5"
+                className="flex items-center gap-2 bg-linear-to-br from-green-500 to-emerald-500 hover:from-green-400 hover:to-emerald-400 text-white font-bold px-8 py-3.5 rounded-2xl text-sm shadow-xl shadow-green-500/30 transition-all disabled:opacity-60 disabled:cursor-not-allowed hover:shadow-green-500/50 hover:-translate-y-0.5"
               >
                 {loading ? (
                   <>

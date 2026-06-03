@@ -67,7 +67,7 @@ export default function Problem() {
           className="text-center mt-10"
         >
           <p className="text-lg font-heading font-semibold text-gray-900 dark:text-white">
-            Eduvia fixes all of this -{' '}
+            Rektora fixes all of this -{' '}
             <span className="text-green-600">in one platform.</span>
           </p>
         </motion.div>

@@ -1,14 +1,15 @@
 /**
  * @file app/layout.tsx
- * @description Root application layout for the Eduvia school management platform.
+ * @description Root application layout for the Rektora school management platform.
  * Sets up global theme providers, registers optimized Google web fonts, implements
- * rich technical SEO configurations (OpenGraph, Twitter, canonical anchors), 
+ * rich technical SEO configurations (OpenGraph, Twitter, canonical anchors),
  * and injects structured JSON-LD schema models for search engine indexing.
  */
 
 import type { Metadata } from 'next';
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
+import { Toaster } from '@/components/ui/sonner';
 
 // =========================================================================
 // Font Configurations (Tailwind Variable Mappings)
@@ -40,18 +41,18 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   // Absolute base domain for referencing assets (e.g. social preview images)
-  metadataBase: new URL('https://eduvia.io'),
-  
+  metadataBase: new URL('https://rektota.com'),
+
   title: {
     // Default page title displayed when custom sub-page titles are omitted
-    default: 'Eduvia - School Management Software for Nigerian Schools',
-    // Template placeholder (e.g. "Fees | Eduvia" when a sub-page supplies "Fees")
-    template: '%s | Eduvia',
+    default: 'Rektora - School Management Software for Nigerian Schools',
+    // Template placeholder (e.g. "Fees | Rektora" when a sub-page supplies "Fees")
+    template: '%s | Rektora',
   },
-  
+
   description:
     'Collect fees, manage results, track students, and communicate with parents — all in one platform.',
-  
+
   keywords: [
     'school management software Nigeria',
     'school fee collection app Nigeria',
@@ -60,27 +61,27 @@ export const metadata: Metadata = {
     'report card software Nigeria',
     'parent portal school Nigeria',
   ],
-  
-  authors: [{ name: 'Eduvia', url: 'https://eduvia.io' }],
-  creator: 'Eduvia',
-  
+
+  authors: [{ name: 'Rektora', url: 'https://rektota.com' }],
+  creator: 'Rektora',
+
   // Direct indexing directives for web spiders
   robots: {
     index: true,
     follow: true,
     googleBot: { index: true, follow: true },
   },
-  
+
   // Link to canonical absolute URL to prevent duplicate index pages
-  alternates: { canonical: 'https://eduvia.io' },
-  
+  alternates: { canonical: 'https://rektota.com' },
+
   // OpenGraph rich visual card details (e.g. WhatsApp, Facebook links share preview)
   openGraph: {
     type: 'website',
     locale: 'en_NG', // Target Nigerian market locale
-    url: 'https://eduvia.io',
-    siteName: 'Eduvia',
-    title: 'Eduvia — School Management Software for Nigerian Schools',
+    url: 'https://rektota.com',
+    siteName: 'Rektora',
+    title: 'Rektora — School Management Software for Nigerian Schools',
     description:
       'The smart way to run your school. Fees, results, parent communication — one platform.',
     images: [
@@ -88,19 +89,19 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Eduvia school management dashboard',
+        alt: 'Rektora school management dashboard',
       },
     ],
   },
-  
+
   // Twitter card previews layout definitions
   twitter: {
     card: 'summary_large_image',
-    title: 'Eduvia — School Management Software',
+    title: 'Rektora — School Management Software',
     description:
       'Collect fees, manage results, and communicate with parents — all in one platform.',
     images: ['/og-image.png'],
-    creator: '@eduvia_io',
+    creator: '@rektora_io',
   },
 };
 
@@ -123,7 +124,7 @@ export default function RootLayout({
     '@graph': [
       {
         '@type': 'SoftwareApplication',
-        name: 'Eduvia',
+        name: 'Rektora',
         applicationCategory: 'BusinessApplication',
         operatingSystem: 'Web',
         offers: {
@@ -140,12 +141,12 @@ export default function RootLayout({
       },
       {
         '@type': 'Organization',
-        name: 'Eduvia',
-        url: 'https://eduvia.io',
-        logo: 'https://eduvia.io/icon_only_logo.png',
+        name: 'Rektora',
+        url: 'https://rektota.com',
+        logo: 'https://rektota.com/icon_only_logo.png',
         contactPoint: {
           '@type': 'ContactPoint',
-          email: 'hello@eduvia.io',
+          email: 'hello@rektota.com',
           contactType: 'customer support',
         },
       },
@@ -162,14 +163,15 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         {/* Child Router pages injection anchor */}
         {children}
-        
+
         {/* Injected script block supplying JSON-LD metadata markup directly to headers */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+
+        <Toaster />
       </body>
     </html>
   );
 }
-
