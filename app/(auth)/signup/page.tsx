@@ -17,6 +17,7 @@ import { Input } from '@/components/ui/input';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import { toast } from 'sonner';
 
 const NIGERIAN_STATES = [
   'Abia',
@@ -274,6 +275,10 @@ export default function SchoolSignup() {
       const data = await response.json();
 
       if (!response.ok) {
+        if (data.type === 'existing_application') {
+          setErrors({ general: data.message });
+          toast.error(data.message, { position: 'top-center' });
+        }
         throw new Error(data.message || 'Signup failed');
       }
 
@@ -282,6 +287,7 @@ export default function SchoolSignup() {
       console.error('Signup error:', error);
       const message =
         error instanceof Error ? error.message : 'An unexpected error occurred';
+
       setErrors({ general: message });
     } finally {
       setLoading(false);

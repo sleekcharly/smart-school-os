@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
       plan,
     } = body;
 
-    // basi validation
+    // basic validation
     if (!school_name || !address || !state || !admin_name || !admin_email) {
       return NextResponse.json(
         {
@@ -46,6 +46,7 @@ export async function POST(req: NextRequest) {
         {
           message:
             'An application with this email already exists. We will review it and get back to you.',
+          type: 'existing_application',
         },
         { status: 400 },
       );
